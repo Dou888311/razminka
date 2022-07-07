@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Solution {
 
     public Solution() {
-        System.out.println("Введите строку: ");
+        System.out.println("Enter String to reverse: ");
         Scanner sc = new Scanner(System.in);
         start(sc.nextLine());
     }
@@ -27,8 +27,8 @@ public class Solution {
     public void start(String str) {
         Instant timeOfStart = Instant.now();
         int counter = 0;
-        System.out.println("Оригинальная строка: " + str);
-        System.out.println("Развернутая строка: " + solution(str));
+        System.out.println("Original String: " + str);
+        System.out.println("Reversed String: " + solution(str));
         while (counter < 100000) {
             solution(str);
             counter++;
@@ -41,9 +41,9 @@ public class Solution {
     public void timeStatistic(Instant start, int count) {
         Instant current = Instant.now();
         Duration thousand = Duration.between(start, current);
-        System.out.println("Время выполнения метода " + count + " раз: " +
-                thousand.toMinutesPart() + " минут, " +
-                thousand.toSecondsPart() + " секунд, " +
-                thousand.toMillisPart()+ " миллисекунд.");
+        System.out.println("Time of method working " + count + " times: " +
+                thousand.toMinutesPart() + " minutes, " +
+                thousand.toSecondsPart() + " seconds, " +
+                thousand.toMillisPart()+ " milliseconds.");
     }
 }
